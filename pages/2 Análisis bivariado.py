@@ -91,4 +91,4 @@ figura.add_scatter(x=data[variable_x], y=p(data[variable_x]), mode='lines', line
 figura.update_traces(textposition='top center')
 figura.update_layout(height=600, template='plotly_white')
 figura.update_traces(marker=dict(size=10))
-st.plotly_chart(figura)
+st.plotly_chart(figura, use_container_width=True)
