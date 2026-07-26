@@ -102,7 +102,7 @@ figura.update_layout(
         x=0.5                  # Centrada
     ),
     # 2. Reducimos los márgenes en blanco (Left, Right, Top, Bottom)
-    margin=dict(l=10, r=10, t=40, b=10) 
+    #margin=dict(l=10, r=10, t=40, b=10) 
 )
 figura.update_traces(marker=dict(size=10))
 st.plotly_chart(figura, use_container_width=True)
