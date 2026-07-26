@@ -95,4 +95,14 @@ figura.update_yaxes(
     dtick=1,
     categoryorder='total ascending' if orden == "Ascendente" else 'total descending' # <--- Fuerza el orden por el valor numérico
 )
+figura.update_layout(
+    # 1. Movemos la leyenda debajo del gráfico para liberar ancho
+    legend=dict(
+        orientation="h",       # Leyenda horizontal
+        yanchor="top",
+        y=-0.15,               # Posición debajo del eje X
+        xanchor="center",
+        x=0.5                  # Centrada
+    )
+)
 st.plotly_chart(figura, use_container_width=True)
