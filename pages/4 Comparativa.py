@@ -141,7 +141,7 @@ def renderizar_metricas(team_data, metricas):
             col_idx += 1
 
 # 5. Renderizado en Pestañas (Tabs)
-tabs = st.tabs(grupos_estadisticos.keys())
+tabs = st.tabs(list(grupos_estadisticos.keys()))
 
 for tab, (nombre_grupo, metricas) in zip(tabs, grupos_estadisticos.items()):
     with tab:

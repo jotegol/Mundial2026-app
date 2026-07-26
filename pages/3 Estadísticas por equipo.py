@@ -107,7 +107,7 @@ grupos_estadisticos = {
 }
 
 # 5. Renderizado en Pestañas (Tabs)
-tabs = st.tabs(grupos_estadisticos.keys())
+tabs = st.tabs(list(grupos_estadisticos.keys()))
 
 # Asumiendo un total de 48 equipos
 TOTAL_EQUIPOS = 48
