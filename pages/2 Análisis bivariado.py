@@ -89,6 +89,20 @@ z = np.polyfit(data[variable_x], data[variable_y], 1)
 p = np.poly1d(z)
 figura.add_scatter(x=data[variable_x], y=p(data[variable_x]), mode='lines', line=dict(color='red', width=2), name='Tendencia')
 figura.update_traces(textposition='top center')
-figura.update_layout(height=600, template='plotly_white')
+#figura.update_layout(height=600, template='plotly_white')
+figura.update_layout(
+    height=600, 
+    template='plotly_white',
+    # 1. Movemos la leyenda debajo del gráfico para liberar ancho
+    legend=dict(
+        orientation="h",       # Leyenda horizontal
+        yanchor="top",
+        y=-0.15,               # Posición debajo del eje X
+        xanchor="center",
+        x=0.5                  # Centrada
+    ),
+    # 2. Reducimos los márgenes en blanco (Left, Right, Top, Bottom)
+    margin=dict(l=10, r=10, t=40, b=10) 
+)
 figura.update_traces(marker=dict(size=10))
 st.plotly_chart(figura, use_container_width=True)
